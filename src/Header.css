@@ -1,0 +1,74 @@
+.Header {
+	background-color: var( --hm-red );
+	color: #fff;
+	padding: 20px;
+}
+
+.Header .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Header .Logo {
+	height: 1.38em;
+	margin-right: 0.5em;
+}
+
+.Header h1 {
+	font-size: 1.2em;
+	margin-right: 1rem;
+}
+
+.Header a {
+	color: inherit;
+}
+
+.Header-nav-main {
+	flex-grow: 1;
+}
+
+.Header-nav-main a {
+	margin-right: 0.5em;
+}
+
+.Header nav ul {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.Header nav li {
+	margin-left: 0.5em;
+}
+
+.Header nav a {
+	padding: 0.3em 0.4em;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+.Header nav a:hover,
+.Header nav a:active {
+	border-color: #fff;
+	text-decoration: none;
+}
+
+.Header input[type=search] {
+	background: transparent;
+	border: 1px solid rgba( 255, 255, 255, 0.7 );
+	border-radius: 4px;
+	padding: 0.2em 0.5em;
+	color: #fff;
+	width: 6em;
+	margin-left: 20em;
+	transition: width 200ms, margin 200ms;
+}
+
+.Header input[type=search]:focus {
+	width: 26em;
+	margin-left: 0;
+	border-color: #fff;
+}

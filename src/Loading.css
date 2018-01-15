@@ -1,0 +1,13 @@
+.Loading {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	color: var( --hm-warm-grey );
+}
+
+.Loading svg {
+	color: var( --hm-red );
+}

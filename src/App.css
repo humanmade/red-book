@@ -1,0 +1,23 @@
+.App .wrapper {
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.App-main {
+	display: flex;
+}
+
+.App-main > .Navigation {
+	width: 20%;
+	flex-shrink: 0;
+
+	padding: 1rem 1rem 1rem 0;
+	border-right: 1px solid var( --hm-border );
+	margin-right: 2rem;
+}
+
+.App-main > .Main {
+	width: 80%;
+	flex-grow: 1;
+}

@@ -1,0 +1,19 @@
+.Main {
+	padding: 2rem 0;
+	display: flex;
+}
+
+.Main-content {
+	width: 75%;
+	font-size: 0.875rem;
+	flex-shrink: 0;
+}
+
+.Main > .Navigation {
+	padding-left: 2rem;
+	margin-top: -1rem;
+}
+
+.Main > .Sidebar {
+	flex-grow: 1;
+}

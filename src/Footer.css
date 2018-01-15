@@ -1,0 +1,24 @@
+.Footer {
+	border-top: 1px solid var( --hm-border );
+	margin: 2em 0 0;
+	padding: 2em 0 0;
+
+	display: flex;
+	align-items: stretch;
+
+	font-size: 1.25rem;
+}
+
+.Footer > div {
+	width: 49%;
+	border-right: 1px solid var( --hm-border );
+}
+
+.Footer > div:last-child {
+	text-align: right;
+	border: none;
+}
+
+.Footer-arrow {
+	margin: 0 0.5em;
+}

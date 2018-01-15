@@ -1,0 +1,22 @@
+/* HM Branding */
+:root {
+	--hm-red:         #D24632;
+	--hm-blue:        #7DC9DA;
+	--hm-warm-grey:   #504C4C;
+	--hm-dark-grey:   #353535;
+	--hm-beige:       #F4EFE6;
+	--hm-medium-grey: #737373;
+	--hm-light-grey:  #f7f7f7;
+	--hm-brown:       #4F4641;
+	--hm-border:      #d9d9d9;
+	--hm-red-light:   #E06857;
+	--hm-red-dark:    #B34332;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: 14px/1.4 "proxima-nova", sans-serif;
+	color: var( --hm-dark-grey );
+	$font-family-accent:  "din-condensed", sans-serif !default;
+}
