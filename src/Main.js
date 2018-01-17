@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Content from './Content';
-import Footer from './containers/Footer';
+import PageNavigation from './containers/PageNavigation';
 import Sidebar from './Sidebar';
 
 import './Main.css';
@@ -13,7 +13,7 @@ const Main = ( { page } ) => <div className="Main">
 			content={ `<h1>${ page.title.rendered }</h1>\n${ page.content.rendered }` }
 		/>
 
-		<Footer
+		<PageNavigation
 			page={ page }
 		/>
 	</div>

@@ -1,4 +1,4 @@
-.Footer {
+.PageNavigation {
 	border-top: 1px solid var( --hm-border );
 	margin: 2em 0 0;
 	padding: 2em 0 0;
@@ -9,16 +9,16 @@
 	font-size: 1.25rem;
 }
 
-.Footer > div {
+.PageNavigation > div {
 	width: 49%;
 	border-right: 1px solid var( --hm-border );
 }
 
-.Footer > div:last-child {
+.PageNavigation > div:last-child {
 	text-align: right;
 	border: none;
 }
 
-.Footer-arrow {
+.PageNavigation-arrow {
 	margin: 0 0.5em;
 }

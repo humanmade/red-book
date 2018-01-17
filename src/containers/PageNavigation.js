@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Footer from '../Footer';
+import PageNavigation from '../PageNavigation';
 
 // Do the walk of love.
 const walk = list => {
@@ -30,4 +30,4 @@ const mapStateToProps = ( state, props ) => {
 	};
 };
 
-export default connect( mapStateToProps )( Footer );
+export default connect( mapStateToProps )( PageNavigation );
