@@ -17,7 +17,7 @@
 	margin-right: 2rem;
 }
 
-.App-main > .Main {
+.App-main > :nth-child( 2 ) {
 	width: 80%;
 	flex-grow: 1;
 }

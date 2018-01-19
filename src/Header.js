@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 import './Header.css';
 
-const Header = ( { menu, user, onLogIn } ) => <header className="Header">
+const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
 		<h1>Engineering</h1>
@@ -19,7 +19,12 @@ const Header = ( { menu, user, onLogIn } ) => <header className="Header">
 		<nav>
 			<ul>
 				<li>
-					<input type="search" placeholder="Search…" />
+					<input
+						type="search"
+						placeholder="Search…"
+						value={ searchTerm }
+						onChange={ e => onUpdateSearch( e.target.value ) }
+					/>
 				</li>
 
 				{ user ?

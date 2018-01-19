@@ -1,0 +1,9 @@
+.Search {
+	list-style-type: none;
+	padding: 2rem 0;
+	margin: 0;
+}
+
+.Search > li {
+	margin-bottom: 2rem;
+}
