@@ -82,6 +82,7 @@ function get_script_data() {
 	return [
 		'home'  => home_url(),
 		'api'   => rest_url(),
+		'nonce' => wp_create_nonce( 'wp_rest' ),
 		'posts' => get_post_data(),
 		'menus' => [
 			'primary' => get_menu_data( 'primary-navigation' ),
