@@ -55,7 +55,7 @@ class Content_Importer extends Importer {
 		);
 		$url = add_query_arg( [
 			'ref'          => 'wordpress-content',
-			'access_token' => ACCESS_TOKEN,
+			'access_token' => REDBOOK_ACCESS_TOKEN,
 		], $base );
 		return $url;
 	}
