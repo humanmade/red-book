@@ -15,6 +15,7 @@ function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\register_menus' );
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 
+	API\bootstrap();
 	Contents\bootstrap();
 
 	if ( class_exists( '\\WordPressdotorg\Markdown\Importer' ) ) {
