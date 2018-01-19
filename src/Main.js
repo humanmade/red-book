@@ -19,7 +19,7 @@ const Main = ( { page } ) => <div className="Main">
 	</div>
 
 	<Sidebar
-		contents={ page.contents || [] }
+		page={ page }
 	/>
 </div>;
 

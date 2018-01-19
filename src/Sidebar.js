@@ -4,21 +4,26 @@ import NavMenu from './NavMenu';
 
 import './Sidebar.css';
 
-const Sidebar = ( { contents } ) => <div className="Sidebar">
-	<NavMenu
-		items={ [
-			{
-				title: 'Edit this page',
-				href: '#',
-			}
-		] }
-	/>
-	{ contents && contents.length ?
+const Sidebar = ( { page } ) => {
+	const links = [];
+	if ( page._links['redbook:edit'] ) {
+		links.push( {
+			title: 'Edit this page',
+			href: page._links['redbook:edit'][0].href,
+		} );
+	}
+
+	return <div className="Sidebar">
 		<NavMenu
-			items={ contents || [] }
-			title="Contents"
+			items={ links }
 		/>
-	: null }
-</div>;
+		{ page.contents && page.contents.length ?
+			<NavMenu
+				items={ page.contents }
+				title="Contents"
+			/>
+		: null }
+	</div>;
+};
 
 export default Sidebar;
