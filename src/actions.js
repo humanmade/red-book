@@ -29,9 +29,6 @@ export function loadPageByPath( path ) {
 				const expected = ( [ window.RedBookData.home, path ].join( '/' ) + '/' ).replace( /\/+$/, '/' );
 				const page = data.find( page => page.link === expected );
 
-				console.log( expected );
-				console.log( url );
-
 				if ( ! page ) {
 					throw new Error( 'Could not find page.' );
 				}

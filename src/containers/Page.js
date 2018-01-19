@@ -34,8 +34,6 @@ class Page extends React.Component {
 const mapStateToProps = ( state, props ) => {
 	const expected = ( [ window.RedBookData.home, props.path ].join( '/' ) + '/' ).replace( /\/+$/, '/' );
 
-	console.log( expected );
-
 	return {
 		post: Object.values( state.pages ).find( page => page.link === expected ),
 	};
