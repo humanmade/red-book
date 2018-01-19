@@ -20,6 +20,22 @@ class App extends Component {
 		};
 	}
 
+	componentWillMount() {
+		this.unsubscribeFromHistory = this.props.history.listen( loc => this.handleLocationChange( loc ) );
+	}
+
+	componentWillUnmount() {
+		if ( this.unsubscribeFromHistory ) {
+			this.unsubscribeFromHistory();
+		}
+	}
+
+	handleLocationChange( location ) {
+		if ( this.state.searchTerm ) {
+			this.setState( { searchTerm: '' } );
+		}
+	}
+
 	render() {
 		const { menus, sections } = this.props;
 		const { searchTerm } = this.state;
