@@ -1,0 +1,53 @@
+.Footer {
+	background: var( --hm-warm-grey );
+	color: var( --hm-light-grey );
+	padding: 3rem 0;
+	border-top: 1rem solid var( --hm-red );
+	line-height: 1.7;
+}
+
+.Footer a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.Footer .wrapper {
+	display: flex;
+}
+
+.Footer .wrapper > * {
+	width: 22%;
+	margin-right: 3%;
+}
+
+.Footer .wrapper > *:first-child {
+	width: 27%;
+	margin-right: 23%;
+}
+
+.Footer .Logo {
+	color: var( --hm-red-light );
+	width: 15em;
+	margin-bottom: 1rem;
+}
+
+.Footer-heart {
+	color: var( --hm-red-light );
+}
+
+.Footer .NavMenu {
+	color: inherit;
+}
+
+.Footer .NavMenu a {
+	color: inherit;
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+.Footer .NavMenu a:hover,
+.Footer .NavMenu a:active {
+	background: var( --hm-beige );
+	color: var( --hm-warm-grey );
+	opacity: 1;
+}

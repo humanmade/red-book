@@ -7,6 +7,7 @@
 	width: 75%;
 	font-size: 0.875rem;
 	flex-shrink: 0;
+	padding-bottom: 20rem;
 }
 
 .Main > .Navigation {

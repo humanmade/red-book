@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // import Main from './Main';
+import Footer from './Footer';
 import Header from './Header';
 import Navigation from './Navigation';
 import Page from './containers/Page';
@@ -53,8 +54,9 @@ class App extends Component {
 					} />
 
 				</Switch>
-
 			</div>
+
+			<Footer />
 		</div>;
 	}
 }
