@@ -8,7 +8,7 @@ import './Header.css';
 const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
-		<h1>Engineering</h1>
+		<h1>{ window.RedBookData.name }</h1>
 
 		<nav className="Header-nav-main">
 			<Menu
