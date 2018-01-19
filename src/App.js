@@ -18,6 +18,7 @@ class App extends Component {
 			searchTerm: '',
 			user: null,
 		};
+		this.mainContainer = null;
 	}
 
 	componentWillMount() {
@@ -34,6 +35,11 @@ class App extends Component {
 		if ( this.state.searchTerm ) {
 			this.setState( { searchTerm: '' } );
 		}
+
+		// Scroll main to the top, if we can.
+		if ( this.mainContainer ) {
+			this.mainContainer.scrollIntoView( true );
+		}
 	}
 
 	render() {
@@ -49,7 +55,7 @@ class App extends Component {
 				onUpdateSearch={ term => this.setState( { searchTerm: term } ) }
 			/>
 
-			<div className="App-main wrapper">
+			<div className="App-main wrapper" ref={ ref => this.mainContainer = ref }>
 				<Navigation
 					sections={ sections }
 				/>
