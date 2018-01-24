@@ -2,3 +2,9 @@
 	background-color: #353535;
 	font-size: 75%;
 }
+.markdown-body .note {
+	background: var( --hm-beige );
+	border-radius: 4px;
+	padding: 1rem 1rem 1px;
+	margin-bottom: 1rem;
+}
