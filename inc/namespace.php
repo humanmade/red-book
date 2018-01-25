@@ -89,6 +89,7 @@ function get_script_data() {
 			'primary' => get_menu_data( 'primary-navigation' ),
 		],
 		'sections' => get_section_data(),
+		'user'     => get_user_data(),
 	];
 }
 
@@ -179,4 +180,11 @@ function get_section_data() {
 		return $data;
 	};
 	return $build_children( 0 );
+}
+
+function get_user_data() {
+	$server = rest_get_server();
+	$request = new WP_REST_Request( 'GET', '/wp/v2/users/me' );
+	$response = rest_do_request( $request );
+	return $server->response_to_data( $response, false );
 }

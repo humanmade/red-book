@@ -16,7 +16,6 @@ class App extends Component {
 
 		this.state = {
 			searchTerm: '',
-			user: null,
 		};
 		this.mainContainer = null;
 	}
@@ -45,13 +44,14 @@ class App extends Component {
 	render() {
 		const { menus, sections } = this.props;
 		const { searchTerm } = this.state;
+		const { user } = window.RedBookData;
 
 		return <div className="App">
 			<Header
 				menu={ menus.primary }
 				searchTerm={ searchTerm }
-				user={ this.state.user }
-				onLogIn={ () => this.setState( { user: true } ) }
+				user={ user }
+				onLogIn={ () => {} }
 				onUpdateSearch={ term => this.setState( { searchTerm: term } ) }
 			/>
 
