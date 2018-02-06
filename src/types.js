@@ -32,13 +32,8 @@ pages.idForSearch = term => {
 };
 
 const pathForPage = page => normalizePath( page.link.substr( window.RedBookData.home.length ) );
-pages.getPageByPath = ( state, path ) => {
+// Whittle down to the only page that matches fully.
+pages.findPage = ( pages, path ) => {
 	const normalized = normalizePath( path );
-	const allMatching = pages.getArchive( state.pages, normalized );
-	if ( ! allMatching ) {
-		return null;
-	}
-
-	// Whittle down to the only one that matches fully.
-	return allMatching.find( page => pathForPage( page ) === normalized );
+	return pages.find( page => pathForPage( page ) === normalized );
 };

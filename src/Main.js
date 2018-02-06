@@ -5,10 +5,11 @@ import PageNavigation from './containers/PageNavigation';
 import Loading from './Loading';
 import PageTitle from './PageTitle';
 import Sidebar from './Sidebar';
+import { pages } from './types';
 
 import './Main.css';
 
-const Main = ( { loading, posts } ) => {
+const Main = ( { loading, path, posts } ) => {
 	if ( loading ) {
 		return <Loading />;
 	}
@@ -21,7 +22,7 @@ const Main = ( { loading, posts } ) => {
 		</div>;
 	}
 
-	const page = posts[0];
+	const page = pages.findPage( posts, path );
 	return <PageTitle title={ page.title.rendered }>
 		<div className="Main">
 			<div className="Main-content">
