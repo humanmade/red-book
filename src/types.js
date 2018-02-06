@@ -11,9 +11,15 @@ pages.idForPath = path => {
 	// Query by slug for the final path component.
 	const normalized = normalizePath( path );
 	const components = normalized.split( '/' );
-	pages.registerArchive( normalized, {
-		slug: components.slice( -1 )[0],
-	} );
+	if ( normalized === '' ) {
+		pages.registerArchive( normalized, {
+			include: window.RedBookData.home_page,
+		} );
+	} else {
+		pages.registerArchive( normalized, {
+			slug: components.slice( -1 )[0],
+		} );
+	}
 	return normalized;
 };
 
