@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@humanmade/repress@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@humanmade/repress/-/repress-0.2.1.tgz#43f94f4abf89f95ecc732cc0ad6e703cd4bcb14c"
+  dependencies:
+    lodash "^4.17.5"
+    qs "^6.5.1"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -3902,6 +3909,10 @@ lodash.uniq@^4.5.0:
 "lodash@>=3.5 <5", lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+lodash@^4.17.5:
+  version "4.17.5"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
 loglevel@^1.4.1:
   version "1.5.1"

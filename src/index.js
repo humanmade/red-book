@@ -13,7 +13,9 @@ import 'primer-base/build/build.css';
 import './index.css';
 
 const initialState = {
-	pages: window.RedBookData.posts,
+	pages: {
+		posts: window.RedBookData.posts,
+	},
 	sections: window.RedBookData.sections,
 };
 
