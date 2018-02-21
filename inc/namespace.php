@@ -187,5 +187,8 @@ function get_user_data() {
 	$server = rest_get_server();
 	$request = new WP_REST_Request( 'GET', '/wp/v2/users/me' );
 	$response = rest_do_request( $request );
+	if ( is_wp_error( $response ) || $response->is_error() ) {
+		return null;
+	}
 	return $server->response_to_data( $response, false );
 }
