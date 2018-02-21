@@ -70,10 +70,10 @@ class Content_Importer extends Importer {
 	}
 
 	public function init() {
-		// add_filter( 'cron_schedules', array( $this, 'filter_cron_schedules' ) );
-		// add_action( 'init', array( $this, 'register_cron_jobs' ) );
-		// add_action( 'devhub_restapi_import_manifest', array( $this, 'import_manifest' ) );
-		// add_action( 'devhub_restapi_import_all_markdown', array( $this, 'import_all_markdown' ) );
+		add_filter( 'cron_schedules', array( $this, 'filter_cron_schedules' ) );
+		add_action( 'init', array( $this, 'register_cron_jobs' ) );
+		add_action( 'devhub_restapi_import_manifest', array( $this, 'import_manifest' ) );
+		add_action( 'devhub_restapi_import_all_markdown', array( $this, 'import_all_markdown' ) );
 
 		$editor = new Editor( $this );
 		$editor->init();
