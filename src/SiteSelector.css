@@ -40,6 +40,11 @@
 	background-image: url( "https://humanmade.github.io/hm-pattern-library/assets/images/icons/icon-arrow-down-white.svg" );
 }
 
+.SiteSelector.expanded > button i {
+	background-image: url( "https://humanmade.github.io/hm-pattern-library/assets/images/icons/icon-arrow-down-black.svg" );
+	transform: rotate( 180deg );
+}
+
 .SiteSelector ul {
 	display: none;
 	position: absolute;
