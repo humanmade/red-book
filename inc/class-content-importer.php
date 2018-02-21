@@ -48,13 +48,12 @@ class Content_Importer extends Importer {
 
 	protected function get_manifest_url() {
 		$base = sprintf(
-			'https://api.github.com/repos/%s/contents/%s?ref=%s',
+			'https://api.github.com/repos/%s/contents/%s',
 			'humanmade/Engineering',
-			'bin/manifest.json',
-			'wordpress-content'
+			'bin/manifest.json'
 		);
 		$url = add_query_arg( [
-			'ref'          => 'wordpress-content',
+			'ref'          => 'master',
 			'access_token' => REDBOOK_ACCESS_TOKEN,
 		], $base );
 		return $url;
