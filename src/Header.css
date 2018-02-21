@@ -7,16 +7,21 @@
 .Header .wrapper {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: baseline;
 }
 
 .Header .Logo {
 	height: 1.38em;
 	margin-right: 0.5em;
+	align-self: center;
 }
 
 .Header h1 {
 	font-size: 1.2em;
+	margin-right: 0.5rem;
+}
+
+.Header .SiteSelector {
 	margin-right: 1rem;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Logo from './Logo';
+import SiteSelector from './SiteSelector';
 import Menu from './Menu';
 
 import './Header.css';
@@ -8,7 +9,7 @@ import './Header.css';
 const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
-		<h1>{ window.RedBookData.name }</h1>
+		<SiteSelector />
 
 		<nav className="Header-nav-main">
 			<Menu
