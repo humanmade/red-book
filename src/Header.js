@@ -28,7 +28,14 @@ const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <heade
 				</li>
 
 				{ user ?
-					<li>Logged in as Ryan</li>
+					<li className="Header-user">
+						<img
+							alt=""
+							src={ user.avatar_urls[24] }
+						/>
+
+						{ user.name }
+					</li>
 				:
 					<li><a onClick={ onLogIn }>Log in</a></li>
 				}

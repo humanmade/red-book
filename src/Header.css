@@ -72,3 +72,9 @@
 	margin-left: 0;
 	border-color: #fff;
 }
+
+.Header-user img {
+	vertical-align: middle;
+	border-radius: 12px;
+	margin-right: 0.5em;
+}
