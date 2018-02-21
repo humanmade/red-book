@@ -62,13 +62,13 @@
 	border-radius: 4px;
 	padding: 0.2em 0.5em;
 	color: #fff;
-	width: 6em;
+	width: 10em;
 	margin-left: 20em;
 	transition: width 200ms, margin 200ms;
 }
 
 .Header input[type=search]:focus {
-	width: 26em;
+	width: 30em;
 	margin-left: 0;
 	border-color: #fff;
 }
