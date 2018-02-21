@@ -67,11 +67,11 @@
 }
 
 .SiteSelector li {
-	margin: 0 0 1em;
+	padding: 0 0 1em;
 }
 
 .SiteSelector li:last-child {
-	margin: 0;
+	padding: 0;
 }
 
 .SiteSelector li a {
@@ -89,4 +89,16 @@
 	font-size: 1.2em;
 	font-weight: bold;
 	color: var( --hm-red );
+}
+
+li.SiteSelector-separator {
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	padding: 0.5em 0 0;
+	border-top: 1px solid var( --hm-warm-grey );
+}
+
+.SiteSelector-internal {
+	background: var( --hm-beige );
 }

@@ -18,6 +18,7 @@ export default class SiteSelector extends React.Component {
 	}
 
 	render() {
+		const { user } = this.props;
 		const { expanded } = this.state;
 
 		return <div className={ `SiteSelector ${ expanded ? 'expanded' : '' }` }>
@@ -48,6 +49,38 @@ export default class SiteSelector extends React.Component {
 						Read how we manage projects.
 					</a>
 				</li>
+
+				{ user ?
+					<React.Fragment>
+						<li className="SiteSelector-separator SiteSelector-internal">
+							Internal Sites
+						</li>
+						<li className="SiteSelector-internal">
+							<a href="https://updates.hmn.md/">
+								<span>Updates</span>
+								Main H2 for all the goings-on.
+							</a>
+						</li>
+						<li className="SiteSelector-internal">
+							<a href="https://dev.hmn.md/">
+								<span>Dev</span>
+								Development related discussion.
+							</a>
+						</li>
+						<li className="SiteSelector-internal">
+							<a href="https://servers.hmn.md/">
+								<span>Servers</span>
+								Hosting and server related discussion.
+							</a>
+						</li>
+						<li className="SiteSelector-internal">
+							<a href="https://hub.hmn.md/">
+								<span>Hub</span>
+								Central area for everything else.
+							</a>
+						</li>
+					</React.Fragment>
+				: null }
 			</ul>
 		</div>;
 	}

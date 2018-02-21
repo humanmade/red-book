@@ -9,7 +9,9 @@ import './Header.css';
 const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
-		<SiteSelector />
+		<SiteSelector
+			user={ user }
+		/>
 
 		<nav className="Header-nav-main">
 			<Menu
