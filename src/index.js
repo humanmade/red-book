@@ -17,6 +17,10 @@ const initialState = {
 		posts: window.RedBookData.posts,
 	},
 	sections: window.RedBookData.sections,
+	user: {
+		data: window.RedBookData.user,
+		nonce: window.RedBookData.nonce,
+	},
 };
 
 const middleware = [
