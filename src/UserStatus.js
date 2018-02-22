@@ -26,7 +26,14 @@ const UserStatus = props => {
 				{ user.name }
 			</React.Fragment> }
 		>
-			<li><a onClick={ onLogOut }>Log out</a></li>
+			<li>
+				<a
+					href={ window.RedBookData.home + `/wp-login.php?action=logout` }
+					onClick={ onLogOut }
+				>
+					Log out
+				</a>
+			</li>
 		</HeaderDropdown>
 	</li>;
 }
