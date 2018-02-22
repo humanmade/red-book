@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 import SiteSelector from './SiteSelector';
+import UserStatus from './UserStatus';
 import Menu from './Menu';
 
 import './Header.css';
@@ -32,18 +32,9 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 					/>
 				</li>
 
-				{ user ?
-					<li className="Header-user">
-						<img
-							alt=""
-							src={ user.avatar_urls[24] }
-						/>
-
-						{ user.name }
-					</li>
-				:
-					<li><Link to="/login">Log in</Link></li>
-				}
+				<UserStatus
+					user={ user }
+				/>
 			</ul>
 		</nav>
 	</div>
