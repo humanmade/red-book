@@ -1,0 +1,19 @@
+.Login {
+	padding: 2rem 0;
+	font-size: 1.1em;
+}
+
+.Login form {
+	width: 25em;
+}
+
+.Login form > div {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 0.5em;
+}
+
+.Login form label {
+	width: 35%;
+	font-weight: bold;
+}

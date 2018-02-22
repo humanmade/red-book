@@ -5,6 +5,7 @@
 
 namespace RedBook;
 
+use REST_Sessions\Session_Controller;
 use WP_CLI;
 use WP_REST_Posts_Controller;
 use WP_REST_Request;
@@ -79,11 +80,14 @@ function register_menus() {
 }
 
 function get_script_data() {
+	$has_sessions = class_exists( '\\REST_Sessions\\Session_Controller' );
+
 	return [
 		'home'  => home_url(),
 		'name'  => get_bloginfo( 'name' ),
 		'api'   => rest_url(),
 		'nonce' => wp_create_nonce( 'wp_rest' ),
+		'auth_nonce' => $has_sessions ? Session_Controller::get_nonce() : null,
 		'home_page' => (int) get_option( 'page_on_front' ),
 		'posts' => get_post_data(),
 		'menus' => [
@@ -187,5 +191,8 @@ function get_user_data() {
 	$server = rest_get_server();
 	$request = new WP_REST_Request( 'GET', '/wp/v2/users/me' );
 	$response = rest_do_request( $request );
+	if ( is_wp_error( $response ) || $response->is_error() ) {
+		return null;
+	}
 	return $server->response_to_data( $response, false );
 }

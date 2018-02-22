@@ -1,12 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Logo from './Logo';
 import SiteSelector from './SiteSelector';
+import UserStatus from './UserStatus';
 import Menu from './Menu';
 
 import './Header.css';
 
-const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <header className="Header">
+const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
 		<SiteSelector
@@ -30,14 +32,16 @@ const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <heade
 					/>
 				</li>
 
-				{ user ?
-					<li>Logged in as Ryan</li>
-				:
-					<li><a onClick={ onLogIn }>Log in</a></li>
-				}
+				<UserStatus
+					user={ user }
+				/>
 			</ul>
 		</nav>
 	</div>
 </header>;
 
-export default Header;
+const mapStateToProps = state => ( { user: state.user && state.user.data } );
+
+export default connect(
+	mapStateToProps
+)( Header );
