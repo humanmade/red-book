@@ -1,0 +1,110 @@
+.SiteSelector {
+	/*display: flex;*/
+	position: relative;
+	padding: 0.5em 0.5em;
+	margin: -0.5em -0.5em -0.5em 0;
+	align-items: baseline;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.SiteSelector h1 {
+	display: inline-block;
+}
+
+.SiteSelector > button {
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+.SiteSelector > button i {
+	float: right;
+
+	display: inline-block;
+	width: 1.555rem;
+	height: 1.555rem;
+	padding: 0;
+	vertical-align: bottom;
+	background: no-repeat center center;
+	background-size: auto auto;
+	background-size: 80%;
+	border: none;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+
+	background-image: url( "https://humanmade.github.io/hm-pattern-library/assets/images/icons/icon-arrow-down-white.svg" );
+}
+
+.SiteSelector.expanded > button i {
+	background-image: url( "https://humanmade.github.io/hm-pattern-library/assets/images/icons/icon-arrow-down-black.svg" );
+	transform: rotate( 180deg );
+}
+
+.SiteSelector ul {
+	display: none;
+	position: absolute;
+	box-shadow: 0 2px 2px var( --hm-warm-grey );
+	background: #fff;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	overflow: hidden;
+}
+
+.SiteSelector.expanded {
+	background: #fff;
+	color: var( --hm-warm-grey );
+	z-index: 1;
+}
+
+.SiteSelector.expanded ul {
+	display: block;
+	top: 100%;
+	left: 0;
+	min-width: 150%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.SiteSelector li {
+	padding: 0 0 1em;
+}
+
+.SiteSelector li:last-child {
+	padding: 0;
+}
+
+.SiteSelector li a {
+	display: block;
+	padding: 0.5em;
+}
+
+.SiteSelector li a:hover {
+	background: var( --hm-beige );
+	text-decoration: none;
+}
+
+.SiteSelector li span {
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: var( --hm-red );
+}
+
+li.SiteSelector-separator {
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	padding: 0.5em 0 0;
+	border-top: 1px solid var( --hm-warm-grey );
+}
+
+.SiteSelector-internal {
+	background: var( --hm-beige );
+}
