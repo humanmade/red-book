@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import Navigation from './Navigation';
+import Login from './Login';
 import Page from './containers/Page';
 import Search from './containers/Search';
 
@@ -50,7 +51,6 @@ class App extends Component {
 			<Header
 				menu={ menus.primary }
 				searchTerm={ searchTerm }
-				onLogIn={ () => {} }
 				onUpdateSearch={ term => this.setState( { searchTerm: term } ) }
 			/>
 
@@ -63,6 +63,10 @@ class App extends Component {
 					<Search term={ searchTerm } />
 				:
 					<Switch>
+						<Route
+							component={ Login }
+							path="/login"
+						/>
 
 						{/* Page Fallback */}
 						<Route path="/:path+" render={ props =>

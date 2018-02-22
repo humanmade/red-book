@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 import Menu from './Menu';
 
 import './Header.css';
 
-const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <header className="Header">
+const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
 		<h1>{ window.RedBookData.name }</h1>
@@ -38,7 +39,7 @@ const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <heade
 						{ user.name }
 					</li>
 				:
-					<li><a onClick={ onLogIn }>Log in</a></li>
+					<li><Link to="/login">Log in</Link></li>
 				}
 			</ul>
 		</nav>
