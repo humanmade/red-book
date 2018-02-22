@@ -50,7 +50,6 @@ class App extends Component {
 			<Header
 				menu={ menus.primary }
 				searchTerm={ searchTerm }
-				user={ user }
 				onLogIn={ () => {} }
 				onUpdateSearch={ term => this.setState( { searchTerm: term } ) }
 			/>

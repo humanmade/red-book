@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Logo from './Logo';
 import Menu from './Menu';
@@ -44,4 +45,8 @@ const Header = ( { menu, searchTerm, user, onLogIn, onUpdateSearch } ) => <heade
 	</div>
 </header>;
 
-export default Header;
+const mapStateToProps = state => ( { user: state.user && state.user.data } );
+
+export default connect(
+	mapStateToProps
+)( Header );
