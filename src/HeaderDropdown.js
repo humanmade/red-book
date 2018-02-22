@@ -16,10 +16,17 @@ export default class HeaderDropdown extends React.Component {
 	}
 
 	render() {
-		const { children, className, title } = this.props;
+		const { children, className, flip, title } = this.props;
 		const { expanded } = this.state;
 
-		return <div className={ `HeaderDropdown ${ expanded ? 'expanded' : '' } ${ className || '' }` }>
+		const classes = [
+			'HeaderDropdown',
+			expanded ? 'expanded' : null,
+			flip ? 'flip' : null,
+			className,
+		];
+
+		return <div className={ classes.filter( c => !! c ).join( ' ' ) }>
 			<button
 				onClick={ this.onToggle }
 				type="button"

@@ -68,6 +68,13 @@
 	list-style: none;
 }
 
+.HeaderDropdown.expanded.flip ul {
+	left: auto;
+	right: 0;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 0;
+}
+
 .HeaderDropdown li {
 	padding: 0 0 1em;
 }
