@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
+import SiteSelector from './SiteSelector';
 import Menu from './Menu';
 
 import './Header.css';
@@ -10,7 +11,9 @@ import './Header.css';
 const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
 		<Logo />
-		<h1>{ window.RedBookData.name }</h1>
+		<SiteSelector
+			user={ user }
+		/>
 
 		<nav className="Header-nav-main">
 			<Menu
