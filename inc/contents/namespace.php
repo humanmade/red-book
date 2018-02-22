@@ -94,8 +94,8 @@ function get_header_hierarchy( WP_Post $post ) {
 	$roll_up( 0 );
 
 	// Remove empty top-levels iff they're the only item.
-	while ( count( $root->items ) === 1 && empty( $root->href ) ) {
-		$root = $root->items[0];
+	while ( count( $root->items ) === 1 && empty( $root->items[0]->href ) ) {
+		$root->items = $root->items[0]->items;
 	}
 
 	return $root->items;
