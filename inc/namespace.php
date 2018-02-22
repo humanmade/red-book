@@ -77,6 +77,14 @@ function register_menus() {
 		'primary-navigation',
 		'Primary (Header) Navigation'
 	);
+	register_nav_menu(
+		'handbooks',
+		'Handbook Links (Footer)'
+	);
+	register_nav_menu(
+		'documentation',
+		'Documentation Links (Footer)'
+	);
 }
 
 function get_script_data() {
@@ -92,6 +100,8 @@ function get_script_data() {
 		'posts' => get_post_data(),
 		'menus' => [
 			'primary' => get_menu_data( 'primary-navigation' ),
+			'handbooks' => get_menu_data( 'handbooks' ),
+			'documentation' => get_menu_data( 'documentation' ),
 		],
 		'sections' => get_section_data(),
 		'user'     => get_user_data(),

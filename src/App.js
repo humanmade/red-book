@@ -84,7 +84,10 @@ class App extends Component {
 				}
 			</div>
 
-			<Footer />
+			<Footer
+				documentation={ menus.documentation }
+				handbooks={ menus.handbooks }
+			/>
 		</div>;
 	}
 }
