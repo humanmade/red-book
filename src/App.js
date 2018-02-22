@@ -45,7 +45,6 @@ class App extends Component {
 	render() {
 		const { menus, sections } = this.props;
 		const { searchTerm } = this.state;
-		const { user } = window.RedBookData;
 
 		return <div className="App">
 			<Header
