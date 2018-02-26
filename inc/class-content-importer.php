@@ -48,13 +48,12 @@ class Content_Importer extends Importer {
 
 	protected function get_manifest_url() {
 		$base = sprintf(
-			'https://api.github.com/repos/%s/contents/%s?ref=%s',
+			'https://api.github.com/repos/%s/contents/%s',
 			'humanmade/Engineering',
-			'bin/manifest.json',
-			'wordpress-content'
+			'bin/manifest.json'
 		);
 		$url = add_query_arg( [
-			'ref'          => 'wordpress-content',
+			'ref'          => 'master',
 			'access_token' => REDBOOK_ACCESS_TOKEN,
 		], $base );
 		return $url;
@@ -71,10 +70,10 @@ class Content_Importer extends Importer {
 	}
 
 	public function init() {
-		// add_filter( 'cron_schedules', array( $this, 'filter_cron_schedules' ) );
-		// add_action( 'init', array( $this, 'register_cron_jobs' ) );
-		// add_action( 'devhub_restapi_import_manifest', array( $this, 'import_manifest' ) );
-		// add_action( 'devhub_restapi_import_all_markdown', array( $this, 'import_all_markdown' ) );
+		add_filter( 'cron_schedules', [ $this, 'filter_cron_schedules' ] );
+		add_action( 'init', [ $this, 'register_cron_jobs' ] );
+		add_action( 'devhub_restapi_import_manifest', [ $this, 'import_manifest' ] );
+		add_action( 'devhub_restapi_import_all_markdown', [ $this, 'import_all_markdown' ] );
 
 		$editor = new Editor( $this );
 		$editor->init();
@@ -85,10 +84,10 @@ class Content_Importer extends Importer {
 	 */
 	public function filter_cron_schedules( $schedules ) {
 		if ( empty( $schedules['15_minutes'] ) ) {
-			$schedules['15_minutes'] = array(
+			$schedules['15_minutes'] = [
 				'interval' => 15 * MINUTE_IN_SECONDS,
 				'display'  => '15 minutes'
-			);
+			];
 		}
 		return $schedules;
 	}
