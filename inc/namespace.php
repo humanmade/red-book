@@ -15,6 +15,7 @@ function bootstrap() {
 	add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup_theme' );
 	add_action( 'init', __NAMESPACE__ . '\\register_menus' );
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
+	add_action( 'customize_register', __NAMESPACE__ . '\\register_customizer_controls' );
 
 	API\bootstrap();
 	Contents\bootstrap();
@@ -205,4 +206,38 @@ function get_user_data() {
 		return null;
 	}
 	return $server->response_to_data( $response, false );
+}
+
+function register_customizer_controls() {
+	global $wp_customize;
+	// Settings.
+	$wp_customize->add_setting( 'redbook_manifest_url', [
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	] );
+	$wp_customize->add_setting( 'redbook_access_token', [
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	] );
+
+	// Controls.
+	$wp_customize->add_section( 'redbook', array(
+		'title'      => 'Red Book Settings',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control( 'redbook_manifest_url', [
+		'type'        => 'url',
+		'section'     => 'redbook',
+		'label'       => 'Manifest URL',
+		'description' => 'URL for the Markdown JSON manifest.',
+		'input_attrs' => [
+			'placeholder' => 'https://api.github.com/repos/humanmade/Engineering/contents/bin/manifest.json',
+		],
+	] );
+	$wp_customize->add_control( 'redbook_access_token', [
+		'type'        => 'text',
+		'section'     => 'redbook',
+		'label'       => 'Access Token',
+		'description' => 'GitHub personal access token (for private repositories)',
+	] );
 }
