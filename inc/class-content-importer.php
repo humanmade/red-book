@@ -36,7 +36,13 @@ class Content_Importer extends Importer {
 	public function get_markdown_download_source( $source, $post_id ) {
 		// Send requests to the GH REST API, with our token.
 		$source = preg_replace( '#https?://github\.com/([^/]+/[^/]+)/blob/([^/]+)/(.+)#', 'https://api.github.com/repos/$1/contents/$3?ref=$2', $source );
-		$source = add_query_arg( 'access_token', REDBOOK_ACCESS_TOKEN, $source );
+
+		// Add access token, if we have one.
+		$access_token = get_theme_mod( 'redbook_access_token' );
+		if ( $access_token ) {
+			$source = add_query_arg( 'access_token', $access_token, $source );
+		}
+
 		return $source;
 	}
 
@@ -47,15 +53,19 @@ class Content_Importer extends Importer {
 	}
 
 	protected function get_manifest_url() {
-		$base = sprintf(
-			'https://api.github.com/repos/%s/contents/%s',
-			'humanmade/Engineering',
-			'bin/manifest.json'
-		);
-		$url = add_query_arg( [
-			'ref'          => 'master',
-			'access_token' => REDBOOK_ACCESS_TOKEN,
-		], $base );
+		$base = get_theme_mod( 'redbook_manifest_url' );
+		if ( empty( $base ) ) {
+			return null;
+		}
+
+		$access_token = get_theme_mod( 'redbook_access_token' );
+		if ( $access_token ) {
+			$url = add_query_arg( [
+				'ref'          => 'master',
+				'access_token' => $access_token,
+			], $base );
+		}
+
 		return $url;
 	}
 
@@ -70,6 +80,11 @@ class Content_Importer extends Importer {
 	}
 
 	public function init() {
+		$manifest_url = get_theme_mod( 'redbook_manifest_url' );
+		if ( empty( $manifest_url ) ) {
+			return;
+		}
+
 		add_filter( 'cron_schedules', [ $this, 'filter_cron_schedules' ] );
 		add_action( 'init', [ $this, 'register_cron_jobs' ] );
 		add_action( 'devhub_restapi_import_manifest', [ $this, 'import_manifest' ] );
