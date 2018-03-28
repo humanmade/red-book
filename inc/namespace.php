@@ -89,7 +89,9 @@ function register_menus() {
 }
 
 function get_script_data() {
+	global $wp_query;
 	$has_sessions = class_exists( '\\REST_Sessions\\Session_Controller' );
+	$current_path = trim( explode( '?', $_SERVER['REQUEST_URI'] )[0], '/' );
 
 	return [
 		'home'  => home_url(),
@@ -98,7 +100,7 @@ function get_script_data() {
 		'nonce' => wp_create_nonce( 'wp_rest' ),
 		'auth_nonce' => $has_sessions ? Session_Controller::get_nonce() : null,
 		'home_page' => (int) get_option( 'page_on_front' ),
-		'posts' => get_post_data(),
+		'pages' => get_type_data( $current_path, new WP_REST_Posts_Controller( 'page' ), $wp_query ),
 		'menus' => [
 			'primary' => get_menu_data( 'primary-navigation' ),
 			'handbooks' => get_menu_data( 'handbooks' ),
@@ -138,26 +140,31 @@ function get_menu_data( $location ) {
 	return $data;
 }
 
-function get_post_data() {
-	$query = $GLOBALS['wp_query'];
+function get_type_data( $archive_id, $controller, $query ) {
+	$data = [
+		'archives' => [],
+		'posts'    => get_post_data( $controller, $query ),
+	];
+	$data['archives'][ $archive_id ] = wp_list_pluck( $data['posts'], 'id' );
+	return $data;
+}
+
+function get_post_data( $controller, $query ) {
+	$schema = $controller->get_item_schema();
+	$post_type = $schema['title'];
+
 	$data = [];
 
 	$server = rest_get_server();
 	$request = new WP_REST_Request();
-	$post_controller = new WP_REST_Posts_Controller( 'post' );
-	$page_controller = new WP_REST_Posts_Controller( 'page' );
 	foreach ( $query->posts as $post ) {
-		switch ( $post->post_type ) {
-			case 'post':
-				$response = $post_controller->prepare_item_for_response( $post, $request );
-				break;
-
-			case 'page':
-				$response = $page_controller->prepare_item_for_response( $post, $request );
-				break;
+		if ( $post->post_type !== $post_type ) {
+			continue;
 		}
 
-		if ( is_wp_error( $response ) || $response->is_error() ) {
+		$response = $controller->prepare_item_for_response( $post, $request );
+
+		if ( ! $response || is_wp_error( $response ) || $response->is_error() ) {
 			continue;
 		}
 
