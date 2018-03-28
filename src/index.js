@@ -13,10 +13,10 @@ import 'primer-base/build/build.css';
 import './index.css';
 
 const initialState = {
-	pages: window.RedBookData.pages,
+	pages:    window.RedBookData.pages,
 	sections: window.RedBookData.sections,
-	user: {
-		data: window.RedBookData.user,
+	user:     {
+		data:  window.RedBookData.user,
 		nonce: window.RedBookData.nonce,
 	},
 };
