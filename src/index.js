@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, StaticRouter } from 'react-router-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import render from 'react-wp-ssr';
 
 import App from './App';
 import rootReducer from './reducers';
@@ -13,12 +13,10 @@ import 'primer-base/build/build.css';
 import './index.css';
 
 const initialState = {
-	pages: {
-		posts: window.RedBookData.posts,
-	},
+	pages:    window.RedBookData.pages,
 	sections: window.RedBookData.sections,
-	user: {
-		data: window.RedBookData.user,
+	user:     {
+		data:  window.RedBookData.user,
 		nonce: window.RedBookData.nonce,
 	},
 };
@@ -39,24 +37,24 @@ const appProps = {
 	sections: window.RedBookData.sections,
 };
 
-const render = AppComponent => {
-	ReactDOM.render(
-		<Provider store={ store }>
-			<BrowserRouter>
-				<Route component={ props => <App { ...props} { ...appProps } /> } />
-			</BrowserRouter>
-		</Provider>,
-		document.getElementById('root')
-	);
+const getRenderer = App => environment => {
+	const Router = environment === 'server' ? StaticRouter : BrowserRouter;
+	const routerProps = environment === 'server' ? { location: window.location, context: {} } : {};
+
+	return <Provider store={ store }>
+		<Router { ...routerProps }>
+			<Route component={ props => <App { ...props} { ...appProps } /> } />
+		</Router>
+	</Provider>;
 };
 
-render( App );
+render( getRenderer( App ) );
 // registerServiceWorker();
 
 if ( module.hot ) {
 	module.hot.accept( './App', () => {
 		import( './App' ).then( newAppModule => {
-			render( newAppModule.default );
+			render( getRenderer( newAppModule.default ) );
 		} );
 	} );
 }

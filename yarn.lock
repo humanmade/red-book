@@ -5198,6 +5198,10 @@ react-wp-scripts@^0.1.1:
     react-scripts "1.0.17"
     signal-exit "^3.0.2"
 
+react-wp-ssr@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-wp-ssr/-/react-wp-ssr-0.0.3.tgz#e5637f7ae6ad7670716f863dad376c9785c15156"
+
 react@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
