@@ -1,0 +1,3 @@
+[submodule "vendor/react-wp-ssr"]
+	path = vendor/react-wp-ssr
+	url = git@github.com:humanmade/react-wp-ssr.git

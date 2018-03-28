@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, StaticRouter } from 'react-router-dom';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-
-import render from './render';
+import render from 'react-wp-ssr';
 
 import App from './App';
 import rootReducer from './reducers';
