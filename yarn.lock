@@ -5193,22 +5193,6 @@ pretty-format@^20.0.3:
     ansi-regex "^2.1.1"
     ansi-styles "^3.0.0"
 
-primer-base@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/primer-base/-/primer-base-1.5.1.tgz#f5872ec095210180929ba14306f751d3efbb8292"
-  dependencies:
-    primer-support "4.4.1"
-
-primer-markdown@^3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/primer-markdown/-/primer-markdown-3.7.1.tgz#2689a5e8d0e2e513d50ec00a056bbacc58bcb9f1"
-  dependencies:
-    primer-support "4.4.1"
-
-primer-support@4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/primer-support/-/primer-support-4.4.1.tgz#c51e94a118b7e1b2083b79a1833223345e23a641"
-
 private@^0.1.6, private@^0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
