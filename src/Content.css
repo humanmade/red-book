@@ -8,3 +8,75 @@
 	padding: 1rem 1rem 1px;
 	margin-bottom: 1rem;
 }
+
+.markdown-body > :first-child {
+	margin-top: 0;
+}
+
+.markdown-body .anchor {
+	float: left;
+	padding-right: 4px;
+	margin-left: -0.72em;
+	visibility: hidden;
+	border-style: none;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	visibility: visible;
+}
+
+.markdown-body blockquote {
+	font-size: inherit;
+	border-left: 6px solid #f5f5f5;
+	color: #847F7F;
+	padding-left: 15px;
+}
+
+.markdown-body p,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body .text-std {
+	margin: 1rem 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+	padding-left: 20px;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	line-height: 1.555em;
+	margin: 1rem 0;
+	text-transform: none;
+}
+
+.markdown-body blockquote,
+.markdown-body hr {
+	margin: 1.66667rem 0;
+}
+
+.markdown-body code,
+.markdown-body tt {
+	font-size: 85%;
+}
+
+.markdown-body pre > code {
+	font-size: 12px;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+}
+
+.markdown-body pre {
+	word-break: normal;
+}

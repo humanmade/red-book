@@ -1,14 +1,17 @@
 .Footer {
 	background: var( --hm-warm-grey );
 	color: var( --hm-light-grey );
-	padding: 3rem 0;
+	padding: 2.5rem 0;
 	border-top: 1rem solid var( --hm-red );
+	font-size: 0.833333rem;
 	line-height: 1.7;
 }
 
-.Footer a {
+.Footer a,
+.Footer a:link,
+.Footer a:visited {
 	color: #fff;
-	text-decoration: underline;
+	border-color: #fff;
 }
 
 .Footer .wrapper {
@@ -36,6 +39,10 @@
 }
 
 .Footer .NavMenu {
+	color: inherit;
+}
+
+.Footer .NavMenu h3 {
 	color: inherit;
 }
 

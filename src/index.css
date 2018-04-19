@@ -16,7 +16,14 @@
 body {
 	margin: 0;
 	padding: 0;
-	font: 14px/1.4 "proxima-nova", sans-serif;
 	color: var( --hm-dark-grey );
-	$font-family-accent:  "din-condensed", sans-serif !default;
+
+	/* Adjust line-height to be relative to font-size */
+	line-height: 1.555;
+}
+
+pre, code, tt {
+	/* Use better font stack for code */
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+	font-size: 12px;
 }

@@ -13,6 +13,7 @@
 .NavMenu ul {
 	list-style-type: none;
 	margin: 0;
+	padding: 0;
 }
 
 .NavMenu li > ul {
@@ -20,7 +21,7 @@
 }
 
 .NavMenu li {
-	margin: 0.3em 0;
+	margin: 0.1em 0;
 }
 
 .NavMenu h3, .NavMenu a {
@@ -37,12 +38,21 @@
 	justify-content: space-between;
 	align-items: baseline;
 	color: var( --hm-medium-grey );
+	border: none;
+	transition: none;
+}
+
+.NavMenu a:link,
+.NavMenu a:visited {
+	color: var( --hm-medium-grey );
 }
 
 .NavMenu a:hover,
-.NavMenu a:active {
-	text-decoration: none;
+.NavMenu a:active,
+.NavMenu a:focus {
+	border: none;
 	background: var( --hm-beige );
+	transition: none;
 }
 
 .NavMenu a.active {

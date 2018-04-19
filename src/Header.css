@@ -1,7 +1,8 @@
 .Header {
 	background-color: var( --hm-red );
 	color: #fff;
-	padding: 20px;
+	font-size: 0.777778rem;
+	padding: 1rem;
 }
 
 .Header .wrapper {
@@ -18,11 +19,14 @@
 
 .Header h1 {
 	font-size: 1.2em;
-	margin-right: 0.5rem;
+	margin: 0 0.4rem 0 0;
+	color: inherit;
+	text-transform: none;
+	line-height: 1.4;
 }
 
 .Header .SiteSelector {
-	margin-right: 1rem;
+	margin-right: 0.75rem;
 }
 
 .Header a {
