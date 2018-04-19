@@ -1,3 +1,6 @@
 [submodule "vendor/react-wp-ssr"]
 	path = vendor/react-wp-ssr
 	url = git@github.com:humanmade/react-wp-ssr.git
+[submodule "hm-pattern-library"]
+	path = hm-pattern-library
+	url = git@github.com:humanmade/hm-pattern-library.git
