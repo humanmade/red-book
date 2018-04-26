@@ -8,9 +8,9 @@ import './NavMenu.css';
 const NavMenu = ( { href, items, title } ) => <nav className="NavMenu">
 	{ title ? (
 		href ? (
-			<h3 className="has-link"><Link href={ href }>{ title }</Link></h3>
+			<p className="NavMenu-title has-link"><Link href={ href }>{ title }</Link></p>
 		) : (
-			<h3>{ title }</h3>
+			<p className="NavMenu-title">{ title }</p>
 		)
 	) : null }
 	<Menu items={ items } />
