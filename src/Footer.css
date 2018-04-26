@@ -34,10 +34,6 @@
 	margin-bottom: 1rem;
 }
 
-.Footer-heart {
-	color: var( --hm-red-light );
-}
-
 .Footer .NavMenu {
 	color: inherit;
 }
