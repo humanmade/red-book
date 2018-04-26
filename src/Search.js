@@ -15,6 +15,7 @@ export default function Search( props ) {
 	}
 
 	return <ol className="Search">
+		<h1>Search Results</h1>
 		{ props.posts.map( result =>
 			<li key={ result.id } className="markdown-body">
 				<h2><Link href={ result.link }>{ result.title.rendered }</Link></h2>
