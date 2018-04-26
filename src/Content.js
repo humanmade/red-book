@@ -1,7 +1,6 @@
 import hljs from 'highlight.js';
 import React from 'react';
 
-import 'primer-markdown/build/build.css';
 import 'highlight.js/styles/monokai-sublime.css';
 import './Content.css';
 

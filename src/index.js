@@ -9,7 +9,7 @@ import App from './App';
 import rootReducer from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
-import 'primer-base/build/build.css';
+import './base.css';
 import './index.css';
 
 const initialState = {
