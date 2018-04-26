@@ -6,7 +6,7 @@ import NavMenu from './NavMenu';
 import './Footer.css';
 
 export default function Footer( props ) {
-	return <footer className="Footer">
+	return <footer className="Footer" role="contentinfo">
 		<div className="wrapper">
 			<div>
 				<Logo />
