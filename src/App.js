@@ -47,6 +47,8 @@ class App extends Component {
 		const { searchTerm } = this.state;
 
 		return <div className="App">
+			<a class="App-skip-link screen-reader-text" href="#content">Skip to content</a>
+
 			<Header
 				menu={ menus.primary }
 				searchTerm={ searchTerm }
@@ -62,20 +64,24 @@ class App extends Component {
 					<Search term={ searchTerm } />
 				:
 					<Switch>
-						<Route
-							component={ Login }
-							path="/login"
-						/>
+						<Route path="/login" render={ props =>
+							<Login
+								id="content"
+								{ ...props }
+							/>
+						} />
 
 						{/* Page Fallback */}
 						<Route path="/:path+" render={ props =>
 							<Page
+								id="content"
 								path={ props.match.params.path }
 							/>
 						} />
 
 						<Route exact path="/" render={ props =>
 							<Page
+								id="content"
 								path="/"
 							/>
 						} />

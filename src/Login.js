@@ -31,7 +31,7 @@ class Login extends React.Component {
 		}
 
 		return <PageTitle title="Log In">
-			<div className="Login">
+			<div className="Login" id={ this.props.id || null }>
 				<h1>Log In</h1>
 				<form onSubmit={ this.onLogIn }>
 					<div>

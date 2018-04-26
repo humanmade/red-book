@@ -4,6 +4,16 @@
 	margin: 0 auto;
 }
 
+.App .App-skip-link:focus {
+	height: auto;
+	display: block;
+	text-align: center;
+	color: var( --hm-red );
+	background: #fff;
+	padding: 0.25em;
+	border-radius: 4px;
+}
+
 .App-main {
 	display: flex;
 }
