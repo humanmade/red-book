@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 import SiteSelector from './SiteSelector';
@@ -10,7 +11,10 @@ import './Header.css';
 
 const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header className="Header">
 	<div className="wrapper">
-		<Logo />
+		<Link className="Header-logo-link" to="/">
+			<Logo />
+		</Link>
+
 		<SiteSelector
 			user={ user }
 		>

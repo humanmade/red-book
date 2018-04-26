@@ -11,10 +11,19 @@
 	align-items: baseline;
 }
 
+.Header-logo-link {
+	align-self: center;
+	margin-right: 0.5em;
+}
+
+.Header-logo-link:hover,
+.Header-logo-link:focus {
+	border-bottom: 2px solid #fff;
+}
+
 .Header .Logo {
 	height: 1.38em;
-	margin-right: 0.5em;
-	align-self: center;
+	vertical-align: middle;
 }
 
 .Header-title {
