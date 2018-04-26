@@ -7,14 +7,14 @@ import './Search.css';
 
 export default function Search( props ) {
 	if ( props.loading ) {
-		return <main className="Search markdown-body">
+		return <main className="Search markdown-body" id={ props.id || null }>
 			<Loading />
 			<p aria-atomic="true" aria-live="polite" className="screen-reader-text" />
 		</main>;
 	}
 
 	if ( ! props.posts || ! props.posts.length ) {
-		return <main className="Search markdown-body">
+		return <main className="Search markdown-body" id={ props.id || null }>
 			<h1>Search Results</h1>
 			<p aria-atomic="true" aria-live="polite">
 				No results found
@@ -22,7 +22,7 @@ export default function Search( props ) {
 		</main>;
 	}
 
-	return <main className="Search markdown-body">
+	return <main className="Search markdown-body" id={ props.id || null }>
 		<h1>Search Results</h1>
 		<p aria-atomic="true" aria-live="polite" className="screen-reader-text">
 			{ props.posts.length === 1 ? `1 result` : `${ props.posts.length } results` }

@@ -32,6 +32,11 @@ class App extends Component {
 	}
 
 	handleLocationChange( location ) {
+		// Don't change on in-page navigation.
+		if ( location.pathname === this.props.location.pathname && location.search === this.props.location.search ) {
+			return;
+		}
+
 		if ( this.state.searchTerm ) {
 			this.setState( { searchTerm: '' } );
 		}
@@ -61,7 +66,10 @@ class App extends Component {
 				/>
 
 				{ searchTerm ?
-					<Search term={ searchTerm } />
+					<Search
+						id="content"
+						term={ searchTerm }
+					/>
 				:
 					<Switch>
 						<Route path="/login" render={ props =>
