@@ -14,10 +14,10 @@ export default function Search( props ) {
 		return <div>No results found</div>;
 	}
 
-	return <ol className="Search">
+	return <ol className="Search markdown-body">
 		<h1>Search Results</h1>
 		{ props.posts.map( result =>
-			<li key={ result.id } className="markdown-body">
+			<li key={ result.id }>
 				<h2><Link href={ result.link }>{ result.title.rendered }</Link></h2>
 				<div
 					dangerouslySetInnerHTML={ { __html: result.excerpt.rendered } }
