@@ -13,7 +13,9 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 		<Logo />
 		<SiteSelector
 			user={ user }
-		/>
+		>
+			<h1>{ window.RedBookData.name }</h1>
+		</SiteSelector>
 
 		<nav className="Header-nav-main">
 			<Menu
