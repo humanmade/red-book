@@ -7,18 +7,26 @@ import './Search.css';
 
 export default function Search( props ) {
 	if ( props.loading ) {
-		return <Loading />;
+		return <main className="Search markdown-body">
+			<Loading />
+			<p aria-atomic="true" aria-live="polite" className="screen-reader-text" />
+		</main>;
 	}
 
 	if ( ! props.posts || ! props.posts.length ) {
 		return <main className="Search markdown-body">
 			<h1>Search Results</h1>
-			<p>No results found</p>
+			<p aria-atomic="true" aria-live="polite">
+				No results found
+			</p>
 		</main>;
 	}
 
 	return <main className="Search markdown-body">
 		<h1>Search Results</h1>
+		<p aria-atomic="true" aria-live="polite" className="screen-reader-text">
+			{ props.posts.length === 1 ? `1 result` : `${ props.posts.length } results` }
+		</p>
 		<ol>
 			{ props.posts.map( result =>
 				<li key={ result.id }>
