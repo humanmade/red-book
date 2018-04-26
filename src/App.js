@@ -65,12 +65,12 @@ class App extends Component {
 					sections={ sections }
 				/>
 
-				{ searchTerm ?
+				{ searchTerm ? (
 					<Search
 						id="content"
 						term={ searchTerm }
 					/>
-				:
+				) : (
 					<Switch>
 						<Route path="/login" render={ props =>
 							<Login
@@ -95,7 +95,7 @@ class App extends Component {
 						} />
 
 					</Switch>
-				}
+				) }
 			</div>
 
 			<Footer

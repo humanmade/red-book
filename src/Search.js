@@ -25,7 +25,7 @@ export default function Search( props ) {
 	return <main className="Search markdown-body" id={ props.id || null }>
 		<h1>Search Results</h1>
 		<p aria-atomic="true" aria-live="polite" className="screen-reader-text">
-			{ props.posts.length === 1 ? `1 result` : `${ props.posts.length } results` }
+			{ props.posts.length === 1 ? '1 result' : `${ props.posts.length } results` }
 		</p>
 		<ol>
 			{ props.posts.map( result =>

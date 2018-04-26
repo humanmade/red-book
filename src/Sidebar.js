@@ -17,14 +17,14 @@ const Sidebar = ( { page } ) => {
 		<NavMenu
 			items={ links }
 		/>
-		{ page.contents && page.contents.length ?
+		{ page.contents && page.contents.length ? (
 			<nav aria-label="In-Page">
 				<NavMenu
 					items={ page.contents }
 					title="Contents"
 				/>
 			</nav>
-		: null }
+		) : null }
 	</aside>;
 };
 

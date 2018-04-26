@@ -41,11 +41,11 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 					</label>
 				</li>
 
-				{ searchTerm ?
+				{ searchTerm ? (
 					<li className="Header-search-skip-wrap">
 						<a className="Header-search-skip screen-reader-text" href="#content">Skip to results</a>
 					</li>
-				: null }
+				) : null }
 
 				<UserStatus
 					user={ user }

@@ -16,8 +16,6 @@ const NavMenu = ( { href, items, title } ) => <div className="NavMenu">
 	<Menu items={ items } />
 </div>;
 
-NavMenu.defaultProps = {
-	title: null,
-};
+NavMenu.defaultProps = { title: null };
 
 export default NavMenu;
