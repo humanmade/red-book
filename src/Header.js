@@ -17,13 +17,13 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 			<span className="Header-title">{ window.RedBookData.name }</span>
 		</SiteSelector>
 
-		<nav className="Header-nav-main">
+		<nav className="Header-nav Header-nav-main">
 			<Menu
 				items={ menu }
 			/>
 		</nav>
 
-		<nav>
+		<div className="Header-nav">
 			<ul>
 				<li>
 					<input
@@ -38,7 +38,7 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 					user={ user }
 				/>
 			</ul>
-		</nav>
+		</div>
 	</div>
 </header>;
 

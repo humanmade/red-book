@@ -45,7 +45,7 @@
 	margin-right: 0.5em;
 }
 
-.Header nav > ul {
+.Header-nav > ul {
 	display: flex;
 	align-items: baseline;
 	list-style: none;
@@ -53,18 +53,18 @@
 	margin: 0;
 }
 
-.Header nav > ul > li {
+.Header-nav > ul > li {
 	margin-left: 0.5em;
 }
 
-.Header nav > ul > li > a {
+.Header-nav > ul > li > a {
 	padding: 0.3em 0.4em;
 	border: 1px solid transparent;
 	border-radius: 3px;
 }
 
-.Header nav > ul > li > a:hover,
-.Header nav > ul > li > a:active {
+.Header-nav > ul > li > a:hover,
+.Header-nav > ul > li > a:active {
 	border-color: #fff;
 	text-decoration: none;
 }
