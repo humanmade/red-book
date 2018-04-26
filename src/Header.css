@@ -29,7 +29,9 @@
 	margin-right: 0.75rem;
 }
 
-.Header a {
+.Header a,
+.Header a:link,
+.Header a:visited {
 	color: inherit;
 }
 
@@ -53,14 +55,14 @@
 	margin-left: 0.5em;
 }
 
-.Header nav > ul > a {
+.Header nav > ul > li > a {
 	padding: 0.3em 0.4em;
 	border: 1px solid transparent;
 	border-radius: 3px;
 }
 
-.Header nav > ul > a:hover,
-.Header nav > ul > a:active {
+.Header nav > ul > li > a:hover,
+.Header nav > ul > li > a:active {
 	border-color: #fff;
 	text-decoration: none;
 }
