@@ -28,6 +28,7 @@ export default class HeaderDropdown extends React.Component {
 
 		return <div className={ classes.filter( c => !! c ).join( ' ' ) }>
 			<button
+				aria-expanded={ expanded }
 				onClick={ this.onToggle }
 				type="button"
 			>
