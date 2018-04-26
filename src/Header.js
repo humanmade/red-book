@@ -17,7 +17,7 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 			<span className="Header-title">{ window.RedBookData.name }</span>
 		</SiteSelector>
 
-		<nav className="Header-nav Header-nav-main">
+		<nav aria-label="External" className="Header-nav Header-nav-main">
 			<Menu
 				items={ menu }
 			/>

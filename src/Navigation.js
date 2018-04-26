@@ -4,7 +4,7 @@ import NavMenu from './NavMenu';
 
 import './Navigation.css';
 
-const Navigation = ( { sections } ) => <nav className="Navigation">
+const Navigation = ( { sections } ) => <nav aria-label="Primary" className="Navigation">
 	{ sections.map( ( section, idx ) =>
 		<NavMenu
 			key={ idx }
