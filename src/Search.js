@@ -10,8 +10,11 @@ export default function Search( props ) {
 		return <Loading />;
 	}
 
-	if ( ! props.posts ) {
-		return <div>No results found</div>;
+	if ( ! props.posts || ! props.posts.length ) {
+		return <main className="Search markdown-body">
+			<h1>Search Results</h1>
+			<p>No results found</p>
+		</main>;
 	}
 
 	return <main className="Search markdown-body">
