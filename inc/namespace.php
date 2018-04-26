@@ -31,7 +31,11 @@ function bootstrap() {
 	}
 
 	add_filter( 'redbook.contents.anchor_html', function ( $anchor, $item ) {
-		return sprintf( ' <a href="#%1$s" class="anchor"><span class="octicon-link">#</span></a>', $item->id );
+		return sprintf(
+			' <a href="#%1$s" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">%2$s</span></a>',
+			$item->id,
+			esc_html( $item->title )
+		);
 	}, 10, 2 );
 
 	add_filter( 'the_content', function ( $content ) {
