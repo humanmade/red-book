@@ -24,7 +24,7 @@ const Main = ( { loading, path, posts } ) => {
 
 	const page = pages.findPage( posts, path );
 	return <PageTitle title={ page.title.rendered }>
-		<div className="Main">
+		<main className="Main">
 			<div className="Main-content">
 				<Content
 					key={ page.ID }
@@ -39,7 +39,7 @@ const Main = ( { loading, path, posts } ) => {
 			<Sidebar
 				page={ page }
 			/>
-		</div>
+		</main>
 	</PageTitle>;
 }
 

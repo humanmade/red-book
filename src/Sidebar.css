@@ -14,11 +14,8 @@ body.admin-bar .Sidebar {
 	height: calc( 100vh - 32px );
 }
 
-.Sidebar > * {
+.Sidebar .NavMenu {
 	border-bottom: 2px solid var( --hm-border );
-}
-
-.Sidebar > div {
 	padding-bottom: 1rem;
 	margin-bottom: 1rem;
 }

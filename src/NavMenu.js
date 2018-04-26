@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 import './NavMenu.css';
 
-const NavMenu = ( { href, items, title } ) => <nav className="NavMenu">
+const NavMenu = ( { href, items, title } ) => <div className="NavMenu">
 	{ title ? (
 		href ? (
 			<p className="NavMenu-title has-link"><Link href={ href }>{ title }</Link></p>
@@ -14,7 +14,7 @@ const NavMenu = ( { href, items, title } ) => <nav className="NavMenu">
 		)
 	) : null }
 	<Menu items={ items } />
-</nav>;
+</div>;
 
 NavMenu.defaultProps = {
 	title: null,
