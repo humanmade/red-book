@@ -30,12 +30,15 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 		<div className="Header-nav">
 			<ul>
 				<li>
-					<input
-						type="search"
-						placeholder="Search…"
-						value={ searchTerm }
-						onChange={ e => onUpdateSearch( e.target.value ) }
-					/>
+					<label>
+						<span className="screen-reader-text">Search:</span>
+						<input
+							type="search"
+							placeholder="Search…"
+							value={ searchTerm }
+							onChange={ e => onUpdateSearch( e.target.value ) }
+						/>
+					</label>
 				</li>
 
 				<UserStatus
