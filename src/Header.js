@@ -14,7 +14,7 @@ const Header = ( { menu, searchTerm, user, onUpdateSearch } ) => <header classNa
 		<SiteSelector
 			user={ user }
 		>
-			<h1>{ window.RedBookData.name }</h1>
+			<span className="Header-title">{ window.RedBookData.name }</span>
 		</SiteSelector>
 
 		<nav className="Header-nav-main">

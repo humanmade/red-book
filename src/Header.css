@@ -17,9 +17,10 @@
 	align-self: center;
 }
 
-.Header h1 {
+.Header-title {
 	display: inline-block;
 	font-size: 1.2em;
+	font-weight: bold;
 	margin: 0 0.4rem 0 0;
 	color: inherit;
 	text-transform: none;
