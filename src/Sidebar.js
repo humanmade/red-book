@@ -18,7 +18,7 @@ const Sidebar = ( { page } ) => {
 			items={ links }
 		/>
 		{ page.contents && page.contents.length ? (
-			<nav aria-label="In-Page">
+			<nav aria-label="Contents">
 				<NavMenu
 					items={ page.contents }
 					title="Contents"
