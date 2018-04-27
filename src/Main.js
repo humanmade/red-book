@@ -9,7 +9,7 @@ import { pages } from './types';
 
 import './Main.css';
 
-const Main = ( { loading, path, posts } ) => {
+const Main = ( { id, loading, path, posts } ) => {
 	if ( loading ) {
 		return <Loading />;
 	}
@@ -24,7 +24,7 @@ const Main = ( { loading, path, posts } ) => {
 
 	const page = pages.findPage( posts, path );
 	return <PageTitle title={ page.title.rendered }>
-		<div className="Main">
+		<main className="Main" id={ id || null }>
 			<div className="Main-content">
 				<Content
 					key={ page.ID }
@@ -39,7 +39,7 @@ const Main = ( { loading, path, posts } ) => {
 			<Sidebar
 				page={ page }
 			/>
-		</div>
+		</main>
 	</PageTitle>;
 }
 

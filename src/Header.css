@@ -11,14 +11,25 @@
 	align-items: baseline;
 }
 
-.Header .Logo {
-	height: 1.38em;
-	margin-right: 0.5em;
+.Header-logo-link {
 	align-self: center;
+	margin-right: 0.5em;
 }
 
-.Header h1 {
+.Header-logo-link:hover,
+.Header-logo-link:focus {
+	border-bottom: 2px solid #fff;
+}
+
+.Header .Logo {
+	height: 1.38em;
+	vertical-align: middle;
+}
+
+.Header-title {
+	display: inline-block;
 	font-size: 1.2em;
+	font-weight: bold;
 	margin: 0 0.4rem 0 0;
 	color: inherit;
 	text-transform: none;
@@ -29,7 +40,9 @@
 	margin-right: 0.75rem;
 }
 
-.Header a {
+.Header a,
+.Header a:link,
+.Header a:visited {
 	color: inherit;
 }
 
@@ -41,7 +54,7 @@
 	margin-right: 0.5em;
 }
 
-.Header nav > ul {
+.Header-nav > ul {
 	display: flex;
 	align-items: baseline;
 	list-style: none;
@@ -49,18 +62,19 @@
 	margin: 0;
 }
 
-.Header nav > ul > li {
+.Header-nav > ul > li {
 	margin-left: 0.5em;
 }
 
-.Header nav > ul > a {
+.Header-nav > ul > li > a {
 	padding: 0.3em 0.4em;
 	border: 1px solid transparent;
 	border-radius: 3px;
 }
 
-.Header nav > ul > a:hover,
-.Header nav > ul > a:active {
+.Header-nav > ul > li > a:hover,
+.Header-nav > ul > li > a:active,
+.Header-nav > ul > li > a:focus {
 	border-color: #fff;
 	text-decoration: none;
 }
@@ -80,4 +94,19 @@
 	width: 30em;
 	margin-left: 0;
 	border-color: #fff;
+}
+
+.Header .Header-search-skip-wrap {
+	margin: 0;
+}
+
+.Header .Header-search-skip:focus {
+	display: inline;
+	height: auto;
+	width: auto;
+	position: relative;
+	left: 0;
+	top: 0;
+	margin: 0 0 0 0.5em;
+	overflow: unset;
 }

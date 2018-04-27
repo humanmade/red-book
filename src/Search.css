@@ -1,9 +1,13 @@
 .Search {
-	list-style-type: none;
 	padding: 2rem 0;
+}
+
+.Search > ol {
+	list-style-type: none;
+	padding: 0;
 	margin: 0;
 }
 
-.Search > li {
+.Search > ol > li {
 	margin-bottom: 2rem;
 }

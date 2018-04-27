@@ -4,7 +4,7 @@ import NavMenu from './NavMenu';
 
 import './Navigation.css';
 
-const Navigation = ( { sections } ) => <div className="Navigation">
+const Navigation = ( { sections } ) => <nav aria-label="Primary" className="Navigation">
 	{ sections.map( ( section, idx ) =>
 		<NavMenu
 			key={ idx }
@@ -13,6 +13,6 @@ const Navigation = ( { sections } ) => <div className="Navigation">
 			title={ section.title }
 		/>
 	) }
-</div>;
+</nav>;
 
 export default Navigation;

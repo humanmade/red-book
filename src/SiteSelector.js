@@ -6,13 +6,11 @@ import HeaderDropdown from './HeaderDropdown';
 import './SiteSelector.css';
 
 export default function SiteSelector( props ) {
-	const { user } = props;
-
-	const title = <h1>{ window.RedBookData.name }</h1>;
+	const { children, user } = props;
 
 	return <HeaderDropdown
 		className="SiteSelector"
-		title={ title }
+		title={ React.Children.only( children ) }
 	>
 		<li>
 			<a href="https://humanmade.com/blog/">

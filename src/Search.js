@@ -7,21 +7,35 @@ import './Search.css';
 
 export default function Search( props ) {
 	if ( props.loading ) {
-		return <Loading />;
+		return <main className="Search markdown-body" id={ props.id || null }>
+			<Loading />
+			<p aria-atomic="true" aria-live="polite" className="screen-reader-text" />
+		</main>;
 	}
 
-	if ( ! props.posts ) {
-		return <div>No results found</div>;
+	if ( ! props.posts || ! props.posts.length ) {
+		return <main className="Search markdown-body" id={ props.id || null }>
+			<h1>Search Results</h1>
+			<p aria-atomic="true" aria-live="polite">
+				No results found
+			</p>
+		</main>;
 	}
 
-	return <ol className="Search">
-		{ props.posts.map( result =>
-			<li key={ result.id } className="markdown-body">
-				<h2><Link href={ result.link }>{ result.title.rendered }</Link></h2>
-				<div
-					dangerouslySetInnerHTML={ { __html: result.excerpt.rendered } }
-				/>
-			</li>
-		) }
-	</ol>;
+	return <main className="Search markdown-body" id={ props.id || null }>
+		<h1>Search Results</h1>
+		<p aria-atomic="true" aria-live="polite" className="screen-reader-text">
+			{ props.posts.length === 1 ? '1 result' : `${ props.posts.length } results` }
+		</p>
+		<ol>
+			{ props.posts.map( result =>
+				<li key={ result.id }>
+					<h2><Link href={ result.link }>{ result.title.rendered }</Link></h2>
+					<div
+						dangerouslySetInnerHTML={ { __html: result.excerpt.rendered } }
+					/>
+				</li>
+			) }
+		</ol>
+	</main>;
 }

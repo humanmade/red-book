@@ -34,15 +34,11 @@
 	margin-bottom: 1rem;
 }
 
-.Footer-heart {
-	color: var( --hm-red-light );
-}
-
 .Footer .NavMenu {
 	color: inherit;
 }
 
-.Footer .NavMenu h3 {
+.Footer .NavMenu-title {
 	color: inherit;
 }
 

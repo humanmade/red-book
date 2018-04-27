@@ -5,19 +5,17 @@ import Menu from './Menu';
 
 import './NavMenu.css';
 
-const NavMenu = ( { href, items, title } ) => <nav className="NavMenu">
+const NavMenu = ( { href, items, title } ) => <div className="NavMenu">
 	{ title ? (
 		href ? (
-			<h3 className="has-link"><Link href={ href }>{ title }</Link></h3>
+			<p className="NavMenu-title has-link"><Link href={ href }>{ title }</Link></p>
 		) : (
-			<h3>{ title }</h3>
+			<p className="NavMenu-title">{ title }</p>
 		)
 	) : null }
 	<Menu items={ items } />
-</nav>;
+</div>;
 
-NavMenu.defaultProps = {
-	title: null,
-};
+NavMenu.defaultProps = { title: null };
 
 export default NavMenu;

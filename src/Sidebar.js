@@ -13,17 +13,19 @@ const Sidebar = ( { page } ) => {
 		} );
 	}
 
-	return <div className="Sidebar">
+	return <aside className="Sidebar">
 		<NavMenu
 			items={ links }
 		/>
-		{ page.contents && page.contents.length ?
-			<NavMenu
-				items={ page.contents }
-				title="Contents"
-			/>
-		: null }
-	</div>;
+		{ page.contents && page.contents.length ? (
+			<nav aria-label="Contents">
+				<NavMenu
+					items={ page.contents }
+					title="Contents"
+				/>
+			</nav>
+		) : null }
+	</aside>;
 };
 
 export default Sidebar;
