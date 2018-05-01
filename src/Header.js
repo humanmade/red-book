@@ -1,7 +1,7 @@
+import uniqueId from 'lodash.uniqueid';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import uniqueString from 'unique-string';
 
 import Logo from './Logo';
 import SiteSelector from './SiteSelector';
@@ -14,7 +14,7 @@ class Header extends React.Component {
 	constructor( props ) {
 		super( props );
 
-		this.formId = uniqueString();
+		this.formId = uniqueId( 'Header' );
 	}
 
 	render() {
