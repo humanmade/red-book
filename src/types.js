@@ -13,7 +13,7 @@ pages.idForPath = path => {
 	const components = normalized.split( '/' );
 	if ( normalized === '' ) {
 		pages.registerArchive( normalized, {
-			include: window.RedBookData.home_page,
+			include: window.RedBookData.home_page.id,
 		} );
 	} else {
 		pages.registerArchive( normalized, {
