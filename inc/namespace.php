@@ -7,6 +7,8 @@ namespace RedBook;
 
 use REST_Sessions\Session_Controller;
 use WP_CLI;
+use WP_Customize_Image_Control;
+use WP_REST_Attachments_Controller;
 use WP_REST_Posts_Controller;
 use WP_REST_Request;
 use WP_REST_Server;
@@ -230,6 +232,22 @@ function register_customizer_controls() {
 		'type'       => 'theme_mod',
 		'capability' => 'edit_theme_options',
 	] );
+	$wp_customize->add_setting( 'redbook_home_hero_image', [
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	] );
+	$wp_customize->add_setting( 'redbook_home_hero_title', [
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	] );
+	$wp_customize->add_setting( 'redbook_home_hero_title_with_logo', [
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	] );
+	$wp_customize->add_setting( 'redbook_home_hero_text', [
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	] );
 
 	// Controls.
 	$wp_customize->add_section( 'redbook', array(
@@ -250,5 +268,33 @@ function register_customizer_controls() {
 		'section'     => 'redbook',
 		'label'       => 'Access Token',
 		'description' => 'GitHub personal access token (for private repositories)',
+	] );
+
+	// Homepage Hero Controls.
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize,
+		'redbook_home_hero_image',
+		[
+			'section'     => 'static_front_page',
+			'label'       => 'Hero Image',
+			'description' => 'Image to display in the background of the hero',
+		]
+	) );
+	$wp_customize->add_control( 'redbook_home_hero_title', [
+		'type'        => 'text',
+		'section'     => 'static_front_page',
+		'label'       => 'Hero Title',
+		'description' => 'Title to display in the homepage hero',
+	] );
+	$wp_customize->add_control( 'redbook_home_hero_title_with_logo', [
+		'type'        => 'checkbox',
+		'section'     => 'static_front_page',
+		'label'       => 'Show logo before hero title?',
+	] );
+	$wp_customize->add_control( 'redbook_home_hero_text', [
+		'type'        => 'textarea',
+		'section'     => 'static_front_page',
+		'label'       => 'Hero Text',
+		'description' => 'Text to display in the homepage hero',
 	] );
 }
