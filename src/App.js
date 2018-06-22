@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 // import Main from './Main';
 import Footer from './Footer';
 import Header from './Header';
+import HomeHero from './HomeHero';
 import Navigation from './Navigation';
 import Login from './Login';
 import Page from './containers/Page';
@@ -59,6 +60,12 @@ class App extends Component {
 				searchTerm={ searchTerm }
 				onUpdateSearch={ term => this.setState( { searchTerm: term } ) }
 			/>
+
+			<Route exact path="/" render={ props => (
+				<HomeHero
+					{ ...window.RedBookData.home_page.hero }
+				/>
+			) } />
 
 			<div className="App-main wrapper" ref={ ref => this.mainContainer = ref }>
 				<Navigation
