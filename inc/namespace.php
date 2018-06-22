@@ -105,7 +105,7 @@ function get_script_data() {
 		'api'   => rest_url(),
 		'nonce' => wp_create_nonce( 'wp_rest' ),
 		'auth_nonce' => $has_sessions ? Session_Controller::get_nonce() : null,
-		'home_page' => (int) get_option( 'page_on_front' ),
+		'home_page' => get_home_page_data(),
 		'pages' => get_type_data( $current_path, new WP_REST_Posts_Controller( 'page' ), $wp_query ),
 		'menus' => [
 			'primary' => get_menu_data( 'primary-navigation' ),
@@ -115,6 +115,41 @@ function get_script_data() {
 		'sections' => get_section_data(),
 		'user'     => get_user_data(),
 	];
+}
+
+function get_home_page_data() {
+	$data = [
+		'id' => (int) get_option( 'page_on_front' ),
+		'hero' => [
+			'image' => null,
+			'title' => get_theme_mod( 'redbook_home_hero_title', null ),
+			'title_with_logo' => get_theme_mod( 'redbook_home_hero_title_with_logo', false ),
+			'text' => get_theme_mod( 'redbook_home_hero_text', null ),
+		],
+	];
+
+	$hero_image_url = get_theme_mod( 'redbook_home_hero_image', null );
+	if ( ! $hero_image_url ) {
+		return $data;
+	}
+
+
+	$hero_image = attachment_url_to_postid( $hero_image_url );
+	if ( empty( $hero_image ) ) {
+		return $data;
+	}
+
+	$post = get_post( $hero_image );
+	$controller = new WP_REST_Attachments_Controller( 'attachment' );
+	$request = new WP_REST_Request();
+	$response = $controller->prepare_item_for_response( $post, $request );
+
+	if ( ! $response || is_wp_error( $response ) || $response->is_error() ) {
+		return $data;
+	}
+
+	$data['hero']['image'] = rest_get_server()->response_to_data( $response, false );
+	return $data;
 }
 
 function get_menu_data( $location ) {
