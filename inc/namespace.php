@@ -240,7 +240,7 @@ function get_section_data() {
 
 			$item = [
 				'id'    => $page->ID,
-				'title' => $page->post_title,
+				'title' => html_entity_decode( $page->post_title ),
 				'href'  => get_permalink( $page ),
 			];
 			if ( isset( $children[ $page->ID ] ) ) {
