@@ -163,6 +163,9 @@ function get_menu_data( $location ) {
 	// Walk and get a threaded array.
 	$walker = new Array_Walker_Nav_Menu();
 	$threaded = $walker->walk( $items, 0, [] );
+	if ( empty( $threaded ) ) {
+		return null;
+	}
 
 	// Build data to pass back.
 	$format_item = function ( $item ) use ( &$format_item ) {
@@ -219,6 +222,10 @@ function get_section_data() {
 	$pages = get_pages( [
 		'sort_column'  => 'menu_order,post_title',
 	] );
+	if ( empty( $pages ) ) {
+		return [];
+	}
+
 	$children = [];
 	foreach ( (array) $pages as $p ) {
 		$parent_id = intval( $p->post_parent );
