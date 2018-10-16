@@ -9,7 +9,8 @@
 	margin-bottom: 1rem;
 }
 
-.markdown-body > :first-child {
+.markdown-body > :first-child,
+.markdown-body .note > :first-child {
 	margin-top: 0;
 }
 
