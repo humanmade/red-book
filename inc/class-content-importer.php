@@ -85,6 +85,11 @@ class Content_Importer extends Importer {
 			return;
 		}
 
+		$has_permalinks = get_option( 'permalink_structure' );
+		if ( empty( $has_permalinks ) ) {
+			return;
+		}
+
 		add_filter( 'cron_schedules', [ $this, 'filter_cron_schedules' ] );
 		add_action( 'init', [ $this, 'register_cron_jobs' ] );
 		add_action( 'devhub_restapi_import_manifest', [ $this, 'import_manifest' ] );
