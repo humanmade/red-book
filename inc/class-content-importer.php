@@ -60,8 +60,10 @@ class Content_Importer extends Importer {
 
 		$access_token = get_theme_mod( 'redbook_access_token' );
 		if ( $access_token ) {
+			$args = wp_parse_args( wp_parse_url( $base, PHP_URL_QUERY ) );
+			$ref = $args['ref'] ?? 'master';
 			$url = add_query_arg( [
-				'ref'          => 'master',
+				'ref'          => $ref,
 				'access_token' => $access_token,
 			], $base );
 		}
@@ -82,6 +84,11 @@ class Content_Importer extends Importer {
 	public function init() {
 		$manifest_url = get_theme_mod( 'redbook_manifest_url' );
 		if ( empty( $manifest_url ) ) {
+			return;
+		}
+
+		$has_permalinks = get_option( 'permalink_structure' );
+		if ( empty( $has_permalinks ) ) {
 			return;
 		}
 
