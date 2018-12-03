@@ -18,7 +18,8 @@ body.admin-bar .Navigation {
 .Navigation__toggle {
 	display: none;
 
-	position: relative;
+	position: sticky;
+	top: 0;
 	margin-left: auto;
 	padding: 0;
 
