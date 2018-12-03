@@ -32,6 +32,7 @@ body.admin-bar .Navigation {
 
 .Navigation__toggle span {
 	display: inline-block;
+	width: 0;
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
