@@ -17,3 +17,18 @@
 .Main > .Sidebar {
 	flex-grow: 1;
 }
+
+@media (max-width: 800px) {
+	.Main {
+		display: block;
+	}
+
+	.Main-content {
+		width: auto;
+		padding: 0 1em;
+	}
+
+	.Main > .Sidebar {
+		display: none;
+	}
+}

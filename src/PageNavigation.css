@@ -22,3 +22,15 @@
 .PageNavigation-arrow {
 	margin: 0 0.5em;
 }
+
+@media (max-width: 800px) {
+	.PageNavigation {
+		flex-direction: column;
+	}
+
+	.PageNavigation > div {
+		border: none;
+		width: auto;
+		margin: 0 0 0.5em;
+	}
+}

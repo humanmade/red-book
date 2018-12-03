@@ -110,3 +110,41 @@
 	margin: 0 0 0 0.5em;
 	overflow: unset;
 }
+
+@media (max-width: 800px) {
+	.Header .Logo {
+		height: 2em;
+	}
+
+	.Header .wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.Header .SiteSelector {
+		margin: 0.5em 0 1em;
+	}
+
+	.Header-nav {
+		align-self: stretch;
+	}
+
+	.Header-nav > ul {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.Header-nav > ul > li {
+		margin: 0.5em 0;
+	}
+
+	.Header input[type=search] {
+		margin-left: 0;
+		width: 100%;
+		font-size: 1.2em;
+	}
+
+	.Header input[type=search]:focus {
+		width: 100%;
+	}
+}
