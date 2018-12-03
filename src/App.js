@@ -42,6 +42,9 @@ class App extends Component {
 		if ( this.state.searchTerm ) {
 			this.setState( { searchTerm: '' } );
 		}
+		if ( this.state.expandedNavigation ) {
+			this.setState( { expandedNavigation: false } );
+		}
 
 		// Scroll main to the top, if we can.
 		if ( this.mainContainer ) {
