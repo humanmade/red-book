@@ -16,7 +16,7 @@ export default function Navigation( props ) {
 				type="button"
 				onClick={ onToggle }
 			>
-				Toggle Navigation
+				<span>Toggle Navigation</span>
 			</button>
 
 			{ sections.map( ( section, idx ) =>

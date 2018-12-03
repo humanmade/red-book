@@ -25,11 +25,27 @@ body.admin-bar .Navigation {
 	/* Hamburger time. */
 	width: 1.244rem;
 	height: 15px;
+	border: 3px solid var( --hm-red );
+	border-width: 3px 0;
+}
+
+.Navigation__toggle span {
+	display: inline-block;
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
-	border: 3px solid var( --hm-red );
-	border-width: 3px 0;
+}
+
+.Navigation__toggle:before {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: -6px;
 }
 
 .Navigation__toggle:after {
