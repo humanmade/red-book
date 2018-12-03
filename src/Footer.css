@@ -54,3 +54,16 @@
 	color: var( --hm-warm-grey );
 	opacity: 1;
 }
+
+@media (max-width: 800px) {
+	.Footer .wrapper {
+		flex-direction: column;
+		padding: 0 0.5em;
+	}
+
+	.Footer .wrapper > *,
+	.Footer .wrapper > *:first-child {
+		width: auto;
+		margin: 0.5em 0;
+	}
+}

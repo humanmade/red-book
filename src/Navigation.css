@@ -14,3 +14,10 @@ body.admin-bar .Navigation {
 	top: 32px;
 	height: calc( 100vh - 32px );
 }
+
+@media (max-width: 800px) {
+	.Navigation {
+		position: static;
+		background: #fff;
+	}
+}

@@ -31,3 +31,26 @@
 	width: 80%;
 	flex-grow: 1;
 }
+
+@media (max-width: 1200px) {
+	.App-main > .Navigation {
+		padding-left: 1rem;
+	}
+}
+
+@media (max-width: 800px) {
+	.App-main {
+		display: block;
+	}
+
+	.App-main > .Navigation {
+		height: auto;
+		width: 100vw;
+		margin: 0;
+		z-index: 1;
+	}
+
+	.App-main > :nth-child( 2 ) {
+		width: auto;
+	}
+}
