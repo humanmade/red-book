@@ -45,9 +45,12 @@ body.admin-bar .Navigation {
 }
 
 @media (max-width: 800px) {
+	.Navigation {
+		position: fixed;
+	}
+
 	.Navigation--expanded {
 		background: #fff;
-		position: absolute;
 	}
 
 	.Navigation > .NavMenu {

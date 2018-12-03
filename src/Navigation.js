@@ -4,35 +4,29 @@ import NavMenu from './NavMenu';
 
 import './Navigation.css';
 
-export default class Navigation extends React.Component {
-	state = {
-		expanded: false,
-	}
+export default function Navigation( props ) {
+	const { expanded, sections, onToggle } = props;
 
-	render() {
-		const { sections } = this.props;
+	const className = `Navigation ${ expanded ? 'Navigation--expanded' : '' }`;
 
-		const className = `Navigation ${ this.state.expanded ? 'Navigation--expanded' : '' }`;
+	return (
+		<nav aria-label="Primary" className={ className }>
+			<button
+				className="Navigation__toggle btn btn--primary"
+				type="button"
+				onClick={ onToggle }
+			>
+				Toggle Navigation
+			</button>
 
-		return (
-			<nav aria-label="Primary" className={ className }>
-				<button
-					className="Navigation__toggle btn btn--primary"
-					type="button"
-					onClick={ () => this.setState( state => ( { expanded: ! state.expanded } ) ) }
-				>
-					Toggle Navigation
-				</button>
-
-				{ sections.map( ( section, idx ) =>
-					<NavMenu
-						key={ idx }
-						href={ section.href || null }
-						items={ section.items }
-						title={ section.title }
-					/>
-				) }
-			</nav>
-		);
-	}
+			{ sections.map( ( section, idx ) =>
+				<NavMenu
+					key={ idx }
+					href={ section.href || null }
+					items={ section.items }
+					title={ section.title }
+				/>
+			) }
+		</nav>
+	);
 }

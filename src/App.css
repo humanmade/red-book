@@ -39,6 +39,11 @@
 }
 
 @media (max-width: 800px) {
+	.App--nav-open {
+		overflow: hidden;
+		height: 100vh;
+	}
+
 	.App-main {
 		display: block;
 	}
