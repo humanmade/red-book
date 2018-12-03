@@ -25,6 +25,7 @@ body.admin-bar .Navigation {
 	/* Hamburger time. */
 	width: 1.244rem;
 	height: 15px;
+	background: #fff;
 	border: 3px solid var( --hm-red );
 	border-width: 3px 0;
 }
