@@ -4,15 +4,29 @@ import NavMenu from './NavMenu';
 
 import './Navigation.css';
 
-const Navigation = ( { sections } ) => <nav aria-label="Primary" className="Navigation">
-	{ sections.map( ( section, idx ) =>
-		<NavMenu
-			key={ idx }
-			href={ section.href || null }
-			items={ section.items }
-			title={ section.title }
-		/>
-	) }
-</nav>;
+export default function Navigation( props ) {
+	const { expanded, sections, onToggle } = props;
 
-export default Navigation;
+	const className = `Navigation ${ expanded ? 'Navigation--expanded' : '' }`;
+
+	return (
+		<nav aria-label="Primary" className={ className }>
+			<button
+				className="Navigation__toggle btn btn--primary"
+				type="button"
+				onClick={ onToggle }
+			>
+				<span>Toggle Navigation</span>
+			</button>
+
+			{ sections.map( ( section, idx ) =>
+				<NavMenu
+					key={ idx }
+					href={ section.href || null }
+					items={ section.items }
+					title={ section.title }
+				/>
+			) }
+		</nav>
+	);
+}

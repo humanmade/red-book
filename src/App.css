@@ -39,12 +39,18 @@
 }
 
 @media (max-width: 800px) {
+	.App--nav-open {
+		overflow: hidden;
+		height: 100vh;
+	}
+
 	.App-main {
 		display: block;
 	}
 
 	.App-main > .Navigation {
 		height: auto;
+		max-height: 100vh;
 		width: 100vw;
 		margin: 0;
 		z-index: 1;

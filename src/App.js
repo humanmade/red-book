@@ -17,6 +17,7 @@ class App extends Component {
 		super( props );
 
 		this.state = {
+			expandedNavigation: false,
 			searchTerm: '',
 		};
 		this.mainContainer = null;
@@ -41,6 +42,9 @@ class App extends Component {
 		if ( this.state.searchTerm ) {
 			this.setState( { searchTerm: '' } );
 		}
+		if ( this.state.expandedNavigation ) {
+			this.setState( { expandedNavigation: false } );
+		}
 
 		// Scroll main to the top, if we can.
 		if ( this.mainContainer ) {
@@ -50,9 +54,14 @@ class App extends Component {
 
 	render() {
 		const { menus, sections } = this.props;
-		const { searchTerm } = this.state;
+		const { expandedNavigation, searchTerm } = this.state;
 
-		return <div className="App">
+		const classes = [
+			'App',
+			expandedNavigation && 'App--nav-open',
+		].filter( Boolean );
+
+		return <div className={ classes.join( ' ' ) }>
 			<a class="App-skip-link screen-reader-text" href="#content">Skip to content</a>
 
 			<Header
@@ -69,7 +78,9 @@ class App extends Component {
 
 			<div className="App-main wrapper" ref={ ref => this.mainContainer = ref }>
 				<Navigation
+					expanded={ expandedNavigation }
 					sections={ sections }
+					onToggle={ () => this.setState( state => ( { expandedNavigation: ! state.expandedNavigation } ) ) }
 				/>
 
 				{ searchTerm ? (

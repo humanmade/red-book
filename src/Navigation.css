@@ -15,9 +15,72 @@ body.admin-bar .Navigation {
 	height: calc( 100vh - 32px );
 }
 
+.Navigation__toggle {
+	display: none;
+
+	position: sticky;
+	top: 0;
+	margin-left: auto;
+	padding: 0;
+
+	/* Hamburger time. */
+	width: 1.244rem;
+	height: 15px;
+	background: #fff;
+	border: 3px solid var( --hm-red );
+	border-width: 3px 0;
+}
+
+.Navigation__toggle span {
+	display: inline-block;
+	width: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.Navigation__toggle:before {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: -6px;
+}
+
+.Navigation__toggle:after {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: var( --hm-red );
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -1.5px;
+}
+
 @media (max-width: 800px) {
 	.Navigation {
-		position: static;
+		position: fixed;
+	}
+
+	.Navigation--expanded {
 		background: #fff;
+	}
+
+	.Navigation > .NavMenu {
+		display: none;
+	}
+
+	.Navigation--expanded > .NavMenu {
+		display: block;
+	}
+
+	.Navigation__toggle {
+		display: block;
 	}
 }
