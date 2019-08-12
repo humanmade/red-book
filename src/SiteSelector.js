@@ -24,12 +24,6 @@ export default function SiteSelector( props ) {
 				Read about how we work as a company.
 			</a>
 		</li>
-		<li>
-			<a href="https://pm.hmn.md/">
-				<span>Project Management Handbook</span>
-				Read how we manage projects.
-			</a>
-		</li>
 
 		{ user ?
 			<React.Fragment>
