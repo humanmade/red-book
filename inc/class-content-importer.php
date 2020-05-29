@@ -30,6 +30,11 @@ class Content_Importer extends Importer {
 		return home_url( '/' );
 	}
 
+	protected function get_access_token() {
+		$access_token = get_theme_mod( 'redbook_access_token' );
+		return $access_token ?: null;
+	}
+
 	/**
 	 * Retrieve the markdown source URL for a given post.
 	 */
@@ -37,44 +42,38 @@ class Content_Importer extends Importer {
 		// Send requests to the GH REST API, with our token.
 		$source = preg_replace( '#https?://github\.com/([^/]+/[^/]+)/blob/([^/]+)/(.+)#', 'https://api.github.com/repos/$1/contents/$3?ref=$2', $source );
 
-		// Add access token, if we have one.
-		$access_token = get_theme_mod( 'redbook_access_token' );
-		if ( $access_token ) {
-			$source = add_query_arg( 'access_token', $access_token, $source );
-		}
-
 		return $source;
 	}
 
 	protected function get_markdown_source_headers( $id ) {
-		return [
+		$headers = [
 			'Accept' => 'application/vnd.github.v3.raw',
 		];
+		$token = $this->get_access_token();
+		if ( $token ) {
+			$headers['Authorization'] = sprintf( 'token %s', $token );
+		}
+		return $headers;
 	}
 
 	protected function get_manifest_url() {
-		$base = get_theme_mod( 'redbook_manifest_url' );
-		if ( empty( $base ) ) {
+		$url = get_theme_mod( 'redbook_manifest_url' );
+		if ( empty( $url ) ) {
 			return null;
-		}
-
-		$access_token = get_theme_mod( 'redbook_access_token' );
-		if ( $access_token ) {
-			$args = wp_parse_args( wp_parse_url( $base, PHP_URL_QUERY ) );
-			$ref = $args['ref'] ?? 'master';
-			$url = add_query_arg( [
-				'ref'          => $ref,
-				'access_token' => $access_token,
-			], $base );
 		}
 
 		return $url;
 	}
 
 	protected function get_manifest_headers() {
-		return [
+		$headers = [
 			'Accept' => 'application/vnd.github.v3.raw',
 		];
+		$token = $this->get_access_token();
+		if ( $token ) {
+			$headers['Authorization'] = sprintf( 'token %s', $token );
+		}
+		return $headers;
 	}
 
 	public function get_post_type() {
