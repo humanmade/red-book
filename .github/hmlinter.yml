@@ -1,0 +1,14 @@
+# GLOBAL SETTINGS
+
+version: latest
+
+phpcs:
+    enabled: true
+    version: inherit
+
+eslint:
+    enabled: true
+    version: inherit
+
+stylelint:
+    enabled: false
