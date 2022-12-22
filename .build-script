@@ -15,7 +15,6 @@ NODE_VERSION=`nvm current`
 # Use the version of node specified in .nvmrc
 nvm use || nvm install $(cat .nvmrc) && nvm use
 
-npm rebuild node-sass --force
 npm install
 npm run build
 
