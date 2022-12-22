@@ -15,7 +15,7 @@ NODE_VERSION=`nvm current`
 # Use the version of node specified in .nvmrc
 nvm use || nvm install $(cat .nvmrc) && nvm use
 
-npm install
+npm ci
 npm run build
 
 # Restore prior version of Node
