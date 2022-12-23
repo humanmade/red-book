@@ -29,7 +29,7 @@
 }
 
 .Footer .Logo {
-	color: var( --hm-red-light );
+	color: var( --hm-red );
 	width: 15em;
 	margin-bottom: 1rem;
 }
