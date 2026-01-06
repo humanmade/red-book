@@ -17,8 +17,8 @@ jobs:
       node_version: 16
       source_branch: master
       release_branch: release
-      built_asset_paths: build
+      built_asset_paths: build vendor
       build_script: |
-        git submodule update --init hm-pattern-library
+        git submodule update --init
         npm ci --legacy-peer-deps
         npm run build
