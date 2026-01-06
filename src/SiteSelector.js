@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Logo from './Logo';
 import HeaderDropdown from './HeaderDropdown';
 
 import './SiteSelector.css';

@@ -7,7 +7,6 @@ import render from 'react-wp-ssr';
 
 import App from './App';
 import rootReducer from './reducers';
-import registerServiceWorker from './registerServiceWorker';
 
 import './base.css';
 import './index.css';
